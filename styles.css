@@ -1,0 +1,36 @@
+.senior-navigation-toolbar {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid #0056b3;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .senior-navigation-toolbar button {
+    padding: 8px 12px;
+    font-size: 16px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .senior-navigation-toolbar button:hover {
+    background-color: #003d82;
+  }
+  
+  .high-contrast {
+    filter: invert(100%) hue-rotate(180deg);
+  }
+  
+  .high-contrast img, .high-contrast video {
+    filter: invert(100%) hue-rotate(180deg);
+  }
