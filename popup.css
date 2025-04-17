@@ -259,3 +259,99 @@ select:hover {
     color: var(--text);
   }
 }
+
+
+
+
+
+/* Add this to your popup.css file */
+.security-bar-container {
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+.security-bar {
+  height: 12px;
+  background-color: #e9ecef;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.security-level {
+  height: 100%;
+  width: 0;
+  border-radius: 6px;
+  transition: var(--transition);
+}
+
+.security-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.security-status i {
+  margin-left: 8px;
+}
+
+.security-details {
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--light-text);
+}
+
+.security-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.security-item i {
+  margin-right: 8px;
+  width: 16px;
+  text-align: center;
+}
+
+.security-safe {
+  color: #2ecc71;
+}
+
+.security-warning {
+  color: #f39c12;
+}
+
+.security-danger {
+  color: #e74c3c;
+}
+
+/* Security level colors */
+.level-safe {
+  background-color: #2ecc71;
+  width: 100%;
+}
+
+.level-suspicious {
+  background-color: #f39c12;
+  width: 65%;
+}
+
+.level-dangerous {
+  background-color: #e74c3c;
+  width: 30%;
+}
+
+.level-checking {
+  background-color: #6c757d;
+  width: 20%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}

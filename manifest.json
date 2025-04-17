@@ -5,7 +5,11 @@
     "description": "A Chrome extension to help elderly users navigate websites more easily",
     "permissions": [
       "activeTab",
+      "scripting",
       "storage"
+    ],
+    "host_permissions": [
+      "<all_urls>"
     ],
     "web_accessible_resources": [
     {
@@ -21,6 +25,9 @@
         "128": "icons/icon128.png"
       }
     },
+    "background": {
+      "service_worker": "background.js"
+    },
     "content_scripts": [
       {
         "matches": ["<all_urls>"],
@@ -32,8 +39,5 @@
       "16": "icons/icon16.png",
       "48": "icons/icon48.png",
       "128": "icons/icon128.png"
-    },
-    "background": {
-      "service_worker": "background.js"
     }
   }
