@@ -1,96 +1,261 @@
+/* popup.css */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+:root {
+  --primary: #6a4c93;
+  --primary-light: #8a6db1;
+  --primary-dark: #4a2c73;
+  --secondary: #b5179e;
+  --accent: #f72585;
+  --background: #f8f9fa;
+  --text: #212529;
+  --light-text: #6c757d;
+  --card-bg: #ffffff;
+  --border-radius: 12px;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    width: 300px;
-    margin: 0; /* Remove default margin */
-    padding: 10px; /* Remove default padding */
-    background-color: #b6bff0;
-    border: 2px solid #9d4edd; /* Adds a blue border matching your button color */
-    border-width: 4px;
-    box-sizing: border-box; /* Ensures the border doesn't add to the total width */
-  }
-  
-  .container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  h1 {
-    font-size: 24px;
-    text-align: center;
-    color: #5e2091;
-    margin-bottom: 0px;
-  }
-  h2 {
-    font-size: 20px;
-    text-align: center;
-    color: #5e2091;
-    margin-bottom: 10px;
-    margin-top: 0px;
-  }
-  
-  .controls {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  
-  button {
-    padding: 10px;
-    font-size: 16px;
-    background-color: #9d4edd;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #5e2091;
-  }
-  
-  .help-section {
-    margin-top: 10px;
-    padding: 8px;
-    background-color: #9d4edd;
-    font-size:14px;
-    border-radius: 5px;
-    color: white;
-  }
-
-
-
-
-  /* Styling for dropdown/select elements */
-select {
-  font-size: 16px; /* Change font size */
-  padding: 8px;
-  width: 100%;
-  background-color: #9d4edd; /* Background color */
-  color: white; /* Text color */
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  font-family: 'Nunito', Arial, sans-serif;
+  width: 340px;
+  background-color: var(--background);
+  color: var(--text);
+  padding: 0;
+  margin: 0;
+  border-radius: var(--border-radius);
+  overflow: hidden;
 }
 
-/* Style the dropdown when hovered */
-select:hover {
-  background-color: #5e2091;
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
 }
 
-/* Style for the dropdown options */
-select option {
-  font-size: 16px;
-  background-color: white;
-  color: #333;
+header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(106, 76, 147, 0.2);
 }
 
-/* Style for the selected option */
-select option:checked {
-  background-color: #9d4edd;
+.logo {
+  background-color: var(--primary);
+  color: white;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-right: 12px;
+  box-shadow: var(--shadow);
 }
 
-.font-selector-label {
+.titles {
+  flex: 1;
+}
+
+h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0;
+  line-height: 1.2;
+}
+
+h2 {
   font-size: 14px;
-  color: #5e2091;
-  font-weight: 600; /* Makes the text semi-bold */
+  font-weight: 600;
+  color: var(--light-text);
+  margin: 0;
+}
+
+h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 8px;
+  margin-top: 4px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.control-group {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 12px;
+  box-shadow: var(--shadow);
+}
+
+.button-group {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  font-family: 'Nunito', Arial, sans-serif;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button:focus {
+  outline: 3px solid rgba(106, 76, 147, 0.4);
+}
+
+.icon-button {
+  width: 44px;
+  height: 44px;
+  background-color: var(--primary-light);
+  color: white;
+  font-size: 16px;
+  flex: 1;
+}
+
+.icon-button:hover {
+  background-color: var(--primary);
+}
+
+.full-button {
+  width: 100%;
+  height: 44px;
+  background-color: var(--primary-light);
+  color: white;
+  font-size: 15px;
+  margin-bottom: 8px;
+  padding: 0 16px;
+}
+
+.full-button:last-child {
+  margin-bottom: 0;
+}
+
+.full-button:hover {
+  background-color: var(--primary);
+}
+
+.full-button i {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.reset-button {
+  background-color: var(--secondary);
+  color: white;
+  height: 44px;
+  padding: 0 16px;
+  margin-top: 4px;
+}
+
+.reset-button:hover {
+  background-color: var(--accent);
+}
+
+.reset-button i {
+  margin-right: 8px;
+}
+
+.select-container {
+  margin-top: 8px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+select {
+  width: 100%;
+  height: 44px;
+  padding: 0 12px;
+  font-family: 'Nunito', Arial, sans-serif;
+  font-size: 15px;
+  background-color: white;
+  color: var(--text);
+  border: 2px solid var(--primary-light);
+  border-radius: 8px;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%236a4c93%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px top 50%;
+  background-size: 12px auto;
+  cursor: pointer;
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(106, 76, 147, 0.25);
+}
+
+select:hover {
+  border-color: var(--primary);
+}
+
+.help-section {
+  margin-top: 16px;
+  padding: 12px;
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  border-left: 4px solid var(--accent);
+}
+
+.help-section i {
+  color: var(--accent);
+  font-size: 20px;
+  margin-right: 12px;
+}
+
+.help-section p {
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+/* For users who prefer dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #212529;
+    --text: #f8f9fa;
+    --light-text: #adb5bd;
+    --card-bg: #343a40;
+    --primary-light: #9d84c4;
+  }
+  
+  select {
+    background-color: #2b3035;
+    color: var(--text);
+  }
 }

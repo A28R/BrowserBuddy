@@ -1,33 +1,77 @@
+<!-- popup.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Senior Web Navigator</title>
+  <meta charset="UTF-8">
+  <title>Browser Buddy</title>
   <link rel="stylesheet" href="popup.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <div class="container">
-    <h1>Browser Buddy</h1>
-    <h2>Senior Web Navigator</h2>
+    <header>
+      <div class="logo">
+        <i class="fas fa-hand-holding-heart"></i>
+      </div>
+      <div class="titles">
+        <h1>Browser Buddy</h1>
+        <h2>Senior Web Navigator</h2>
+      </div>
+    </header>
+
     <div class="controls">
-      <button id="increaseText">Increase Text Size</button>
-      <button id="decreaseText">Decrease Text Size</button>
-      <button id="highContrast">Toggle High Contrast</button>
-      <button id="simplifyPage">Simplify Page</button>
-      <button id="readAloud">Read Aloud</button>
-      <button id="resetButton">Reset</button>
+      <div class="control-group">
+        <h3>Text Size</h3>
+        <div class="button-group">
+          <button id="decreaseText" class="icon-button" aria-label="Decrease Text Size">
+            <i class="fas fa-minus"></i>
+          </button>
+          <button id="increaseText" class="icon-button" aria-label="Increase Text Size">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+      </div>
 
-      <label for="fontSelector" class="font-selector-label" style="margin-top: 10px;">Choose Font:</label>
-      <select id="fontSelector">
-        <option value="default">Default</option>
-        <option value="opendyslexic">OpenDyslexic</option>
-        <option value="arial">Arial</option>
-        <option value="verdana">Verdana</option>
-        <option value="sans-serif">Sans-serif</option>
-      </select>
+      <div class="control-group">
+        <h3>Appearance</h3>
+        <button id="highContrast" class="full-button">
+          <i class="fas fa-adjust"></i>
+          <span>High Contrast</span>
+        </button>
+        <button id="simplifyPage" class="full-button">
+          <i class="fas fa-broom"></i>
+          <span>Simplify Page</span>
+        </button>
+      </div>
 
+      <div class="control-group">
+        <h3>Reading Help</h3>
+        <button id="readAloud" class="full-button">
+          <i class="fas fa-volume-up"></i>
+          <span>Read Aloud</span>
+        </button>
+        
+        <div class="select-container">
+          <label for="fontSelector">Font Style:</label>
+          <select id="fontSelector">
+            <option value="default">Default</option>
+            <option value="opendyslexic">OpenDyslexic</option>
+            <option value="arial">Arial</option>
+            <option value="verdana">Verdana</option>
+            <option value="sans-serif">Sans-serif</option>
+          </select>
+        </div>
+      </div>
+
+      <button id="resetButton" class="reset-button">
+        <i class="fas fa-undo"></i>
+        <span>Reset All Settings</span>
+      </button>
     </div>
+
     <div class="help-section">
-      <p>Need help? Click the buttons above to make websites easier to read and use.</p>
+      <i class="fas fa-info-circle"></i>
+      <p>Click any button above to make websites easier to read and use.</p>
     </div>
   </div>
   <script src="popup.js"></script>

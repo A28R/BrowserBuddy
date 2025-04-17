@@ -1,36 +1,151 @@
+/* styles.css */
 .senior-navigation-toolbar {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border: 2px solid #0056b3;
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    z-index: 10000;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 300px;
+  font-family: 'Nunito', Arial, sans-serif;
+  transition: all 0.3s ease;
+}
+
+.senior-navigation-toolbar-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(106, 76, 147, 0.2);
+}
+
+.senior-navigation-toolbar-icon {
+  background-color: #6a4c93;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.senior-navigation-toolbar-title {
+  font-weight: 700;
+  color: #6a4c93;
+  font-size: 16px;
+  margin: 0;
+}
+
+.senior-navigation-toolbar button {
+  padding: 10px 14px;
+  font-family: 'Nunito', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #8a6db1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.2s ease;
+}
+
+.senior-navigation-toolbar button:hover {
+  background-color: #6a4c93;
+}
+
+.senior-navigation-toolbar button i {
+  margin-right: 8px;
+}
+
+.senior-navigation-toolbar-footer {
+  font-size: 12px;
+  color: #6c757d;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.senior-navigation-toolbar-collapse {
+  align-self: flex-end;
+  width: 28px;
+  height: 28px;
+  background-color: #f1f3f5;
+  margin-bottom: 8px;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.senior-navigation-toolbar-collapse:hover {
+  background-color: #e9ecef;
+}
+
+/* High contrast mode */
+.high-contrast {
+  filter: invert(100%) hue-rotate(180deg);
+  background-color: #000;
+  color: #fff;
+}
+
+.high-contrast img, .high-contrast video {
+  filter: invert(100%) hue-rotate(180deg);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .senior-navigation-toolbar {
+    background-color: rgba(33, 37, 41, 0.95);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .senior-navigation-toolbar-title {
+    color: #9d84c4;
+  }
+  
+  .senior-navigation-toolbar-footer {
+    color: #adb5bd;
+  }
+  
+  .senior-navigation-toolbar-collapse {
+    background-color: #343a40;
+  }
+  
+  .senior-navigation-toolbar-collapse:hover {
+    background-color: #495057;
+  }
+}
+
+/* Accessibility focus states */
+.senior-navigation-toolbar button:focus {
+  outline: 3px solid rgba(106, 76, 147, 0.4);
+}
+
+/* For users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .senior-navigation-toolbar {
+    transition: none;
   }
   
   .senior-navigation-toolbar button {
-    padding: 8px 12px;
-    font-size: 16px;
-    background-color: #0056b3;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    transition: none;
   }
-  
-  .senior-navigation-toolbar button:hover {
-    background-color: #003d82;
-  }
-  
-  .high-contrast {
-    filter: invert(100%) hue-rotate(180deg);
-  }
-  
-  .high-contrast img, .high-contrast video {
-    filter: invert(100%) hue-rotate(180deg);
-  }
+}
+
+/* Font options for dyslexia support */
+.dyslexia-friendly {
+  font-family: 'OpenDyslexic', sans-serif !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0.5px !important;
+}
