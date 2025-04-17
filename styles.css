@@ -16,7 +16,7 @@
   .senior-navigation-toolbar button {
     padding: 8px 12px;
     font-size: 16px;
-    background-color: #0056b3;
+    background-color: #6b7fff;
     color: white;
     border: none;
     border-radius: 5px;
@@ -24,7 +24,7 @@
   }
   
   .senior-navigation-toolbar button:hover {
-    background-color: #003d82;
+    background-color: green;
   }
   
   .high-contrast {
