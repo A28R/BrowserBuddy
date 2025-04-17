@@ -23,6 +23,10 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     case "resetAll":
       resetAllFeatures();
       break;
+    case "changeFont":
+      changeFont(request.font);
+      break;
+  
   }
 });
 
@@ -186,6 +190,70 @@ function resetAllFeatures() {
   // Clear stored preferences
   chrome.storage.local.remove(['textSize', 'highContrast']);
 }
+
+
+function loadOpenDyslexicFont() {
+  if (!document.getElementById("odFontLink")) {
+    const link = document.createElement("link");
+    link.id = "odFontLink";
+    link.rel = "stylesheet";
+    link.href = "https://cdn.jsdelivr.net/gh/antijingoist/open-dyslexic/webkit/opendyslexic.css";
+    document.head.appendChild(link);
+  }
+}
+
+
+
+
+//font
+function changeFont(font) {
+  let fontFamily = "";
+
+  switch (font) {
+    case "opendyslexic":
+      fontFamily = "'OpenDyslexic', sans-serif";
+      loadOpenDyslexicFont(); // load if not yet loaded
+      break;
+    case "arial":
+      fontFamily = "Arial, sans-serif";
+      break;
+    case "verdana":
+      fontFamily = "Verdana, sans-serif";
+      break;
+    case "sans-serif":
+      fontFamily = "sans-serif";
+      break;
+    case "default":
+    default:
+      fontFamily = "";
+      break;
+  }
+
+  document.body.style.fontFamily = fontFamily;
+
+  // Save it to preferences
+  chrome.storage.local.set({ fontPreference: font });
+}
+
+
+chrome.storage.local.get(['textSize', 'highContrast', 'fontPreference'], function(result) {
+  if (result.textSize) {
+    currentTextSize = result.textSize;
+    document.body.style.fontSize = currentTextSize + "%";
+  }
+
+  if (result.highContrast) {
+    highContrastEnabled = result.highContrast;
+    if (highContrastEnabled) {
+      document.body.classList.add('high-contrast');
+    }
+  }
+
+  if (result.fontPreference) {
+    changeFont(result.fontPreference);
+  }
+});
+
 
 
 document.head.appendChild(style);
