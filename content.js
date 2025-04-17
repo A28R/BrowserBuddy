@@ -211,7 +211,7 @@ function loadOpenDyslexicFont() {
     link.id = "odFontLink";
     link.rel = "stylesheet";
     // Use the extension's local resource instead of external URL
-    link.href = chrome.runtime.getURL("fonts/opendyslexic.css");
+    link.href = chrome.runtime.getURL("fonts/open-dyslexic-regular.css");
     document.head.appendChild(link);
   }
 }

@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'OpenDyslexic'; 
-  src: url('OpenDyslexic-Regular.otf') format('opentype'),
-       url('OpenDyslexic-Regular.woff') format('woff'),
-       url('OpenDyslexic-Regular.ttf') format('truetype'),
-       url('OpenDyslexic-Regular.svg#opendyslexicregular') format('svg');
+  src: url('/fonts/otf/OpenDyslexic-Regular.otf') format('opentype'),
+       url('/fonts/woff/OpenDyslexic-Regular.woff') format('woff'),
+       url('/fonts/ttf/OpenDyslexic-Regular.ttf') format('truetype'),
+       url('/fonts/svg/OpenDyslexic-Regular.svg#opendyslexicregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
