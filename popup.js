@@ -33,5 +33,14 @@ document.addEventListener('DOMContentLoaded', function() {
         chrome.tabs.sendMessage(tabs[0].id, {action: "readAloud"});
       });
     });
+
+    //reset button
+    document.getElementById("resetButton").addEventListener("click", () => {
+      chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+        chrome.tabs.sendMessage(tabs[0].id, { action: "resetAll" });
+      });
+    });
+    
+
   });
   

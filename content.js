@@ -20,6 +20,9 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     case "readAloud":
       readPageAloud();
       break;
+    case "resetAll":
+      resetAllFeatures();
+      break;
   }
 });
 
@@ -158,5 +161,32 @@ style.textContent = `
     border: 2px solid yellow !important;
   }
 `;
+
+//reset button
+function resetAllFeatures() {
+  // Reset font size
+  currentTextSize = 100;
+  document.body.style.fontSize = "";
+
+  // Disable high contrast
+  highContrastEnabled = false;
+  document.body.classList.remove('high-contrast');
+
+  // Stop any speech
+  if (window.speechSynthesis) {
+    window.speechSynthesis.cancel();
+  }
+
+  // Restore simplified page if modified
+  if (originalPageState) {
+    document.body.innerHTML = originalPageState;
+    originalPageState = null;
+  }
+
+  // Clear stored preferences
+  chrome.storage.local.remove(['textSize', 'highContrast']);
+}
+
+
 document.head.appendChild(style);
 
