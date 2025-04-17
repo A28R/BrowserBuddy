@@ -7,6 +7,12 @@
       "activeTab",
       "storage"
     ],
+    "web_accessible_resources": [
+    {
+      "resources": ["fonts/*"],
+      "matches": ["<all_urls>"]
+    }
+    ],
     "action": {
       "default_popup": "popup.html",
       "default_icon": {

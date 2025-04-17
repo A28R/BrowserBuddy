@@ -189,6 +189,19 @@ function resetAllFeatures() {
 
   // Clear stored preferences
   chrome.storage.local.remove(['textSize', 'highContrast']);
+
+
+   // Reset font
+   document.body.style.fontFamily = "";
+
+   // Remove any added dyslexic font stylesheet
+   const odFont = document.getElementById("odFontLink");
+   if (odFont) {
+     odFont.remove();
+   }
+ 
+   // Clear storage (removes saved font, size, contrast settings)
+   chrome.storage.local.remove(['textSize', 'highContrast', 'fontPreference']);
 }
 
 
@@ -197,7 +210,8 @@ function loadOpenDyslexicFont() {
     const link = document.createElement("link");
     link.id = "odFontLink";
     link.rel = "stylesheet";
-    link.href = "https://cdn.jsdelivr.net/gh/antijingoist/open-dyslexic/webkit/opendyslexic.css";
+    // Use the extension's local resource instead of external URL
+    link.href = chrome.runtime.getURL("fonts/opendyslexic.css");
     document.head.appendChild(link);
   }
 }
