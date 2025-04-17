@@ -1,7 +1,12 @@
 body {
     font-family: Arial, sans-serif;
     width: 300px;
-    padding: 10px;
+    margin: 0; /* Remove default margin */
+    padding: 10px; /* Remove default padding */
+    background-color: #b6bff0;
+    border: 2px solid #9d4edd; /* Adds a blue border matching your button color */
+    border-width: 4px;
+    box-sizing: border-box; /* Ensures the border doesn't add to the total width */
   }
   
   .container {
@@ -11,10 +16,17 @@ body {
   }
   
   h1 {
+    font-size: 24px;
+    text-align: center;
+    color: #5e2091;
+    margin-bottom: 0px;
+  }
+  h2 {
     font-size: 20px;
     text-align: center;
-    color: #0056b3;
+    color: #5e2091;
     margin-bottom: 10px;
+    margin-top: 0px;
   }
   
   .controls {
@@ -26,7 +38,7 @@ body {
   button {
     padding: 10px;
     font-size: 16px;
-    background-color: #0056b3;
+    background-color: #9d4edd;
     color: white;
     border: none;
     border-radius: 5px;
@@ -34,13 +46,51 @@ body {
   }
   
   button:hover {
-    background-color: #003d82;
+    background-color: #5e2091;
   }
   
   .help-section {
     margin-top: 10px;
     padding: 8px;
-    background-color: #f0f0f0;
+    background-color: #9d4edd;
+    font-size:14px;
     border-radius: 5px;
+    color: white;
   }
-  
+
+
+
+
+  /* Styling for dropdown/select elements */
+select {
+  font-size: 16px; /* Change font size */
+  padding: 8px;
+  width: 100%;
+  background-color: #9d4edd; /* Background color */
+  color: white; /* Text color */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style the dropdown when hovered */
+select:hover {
+  background-color: #5e2091;
+}
+
+/* Style for the dropdown options */
+select option {
+  font-size: 16px;
+  background-color: white;
+  color: #333;
+}
+
+/* Style for the selected option */
+select option:checked {
+  background-color: #9d4edd;
+}
+
+.font-selector-label {
+  font-size: 14px;
+  color: #5e2091;
+  font-weight: 600; /* Makes the text semi-bold */
+}
