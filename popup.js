@@ -51,8 +51,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add this to your popup.js file, inside the DOMContentLoaded event listener
 
-    // Wait until the DOM is fully loaded
-    document.addEventListener('DOMContentLoaded', function () {
     // Get the current active tab
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
       const currentTab = tabs[0];
@@ -71,7 +69,6 @@ document.addEventListener('DOMContentLoaded', function() {
           );
        }
       });
-    });
 
 
     function setSecurityLevel(level) {
