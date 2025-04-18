@@ -68,7 +68,7 @@ header {
 h1 {
   font-size: 22px;
   font-weight: 700;
-  color: var(--primary);
+  color: #b5179e;
   margin: 0;
   line-height: 1.2;
 }
@@ -83,7 +83,7 @@ h2 {
 h3 {
   font-size: 14px;
   font-weight: 600;
-  color: var(--primary);
+  color: #b5179e;
   margin-bottom: 8px;
   margin-top: 4px;
 }
@@ -99,6 +99,14 @@ h3 {
   border-radius: var(--border-radius);
   padding: 12px;
   box-shadow: var(--shadow);
+}
+
+/* Add this to your popup.css file */
+label[for="fontSelector"] {
+  color: var(--secondary); /* or #b5179e directly */
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
 }
 
 .button-group {
