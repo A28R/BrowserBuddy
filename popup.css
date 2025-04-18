@@ -1,19 +1,22 @@
 /* popup.css */
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  --primary: #6a4c93;
-  --primary-light: #8a6db1;
-  --primary-dark: #4a2c73;
-  --secondary: #b5179e;
-  --accent: #f72585;
-  --background: #f8f9fa;
-  --text: #212529;
-  --light-text: #6c757d;
-  --card-bg: #ffffff;
-  --border-radius: 12px;
-  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --transition: all 0.3s ease;
+  --primary: #5700c2;        /* Darker purple */
+  --primary-light: #6e20df;  /* Darker purple light */
+  --primary-dark: #4300a0;   /* Darker purple dark */
+  --surface: #ffffff;
+  --background: #f7f7f7;
+  --text: #1a1a1a;
+  --text-secondary: #757575;
+  --border: #e0e0e0;
+  --disabled: #bdbdbd;
+  --error: #d32f2f;
+  --warning: #f9a825;
+  --success: #2e7d32;
+  --border-radius: 8px;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --transition: all 0.2s ease;
 }
 
 * {
@@ -23,8 +26,8 @@
 }
 
 body {
-  font-family: 'Nunito', Arial, sans-serif;
-  width: 340px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  width: 360px;
   background-color: var(--background);
   color: var(--text);
   padding: 0;
@@ -36,15 +39,15 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  padding: 16px;
+  padding: 20px;
 }
 
 header {
   display: flex;
   align-items: center;
-  margin-bottom: 16px;
-  padding-bottom: 12px;
-  border-bottom: 2px solid rgba(106, 76, 147, 0.2);
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
 }
 
 .logo {
@@ -57,7 +60,7 @@ header {
   align-items: center;
   justify-content: center;
   font-size: 20px;
-  margin-right: 12px;
+  margin-right: 16px;
   box-shadow: var(--shadow);
 }
 
@@ -66,26 +69,25 @@ header {
 }
 
 h1 {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
-  color: #b5179e;
+  color: var(--primary);
   margin: 0;
   line-height: 1.2;
 }
 
 h2 {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--light-text);
-  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-top: 4px;
 }
 
 h3 {
   font-size: 14px;
   font-weight: 600;
-  color: #b5179e;
-  margin-bottom: 8px;
-  margin-top: 4px;
+  color: var(--primary);
+  margin-bottom: 12px;
 }
 
 .controls {
@@ -95,30 +97,30 @@ h3 {
 }
 
 .control-group {
-  background-color: var(--card-bg);
+  background-color: var(--surface);
   border-radius: var(--border-radius);
-  padding: 12px;
+  padding: 16px;
   box-shadow: var(--shadow);
 }
 
-/* Add this to your popup.css file */
 label[for="fontSelector"] {
-  color: var(--secondary); /* or #b5179e directly */
+  color: var(--text);
   font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 6px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
 }
 
 .button-group {
   display: flex;
-  gap: 8px;
+  gap: 12px;
 }
 
 button {
-  font-family: 'Nunito', Arial, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 600;
   border: none;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   cursor: pointer;
   transition: var(--transition);
   display: flex;
@@ -126,8 +128,9 @@ button {
   justify-content: center;
 }
 
-button:focus {
-  outline: 3px solid rgba(106, 76, 147, 0.4);
+button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }
 
 .icon-button {
@@ -148,8 +151,8 @@ button:focus {
   height: 44px;
   background-color: var(--primary-light);
   color: white;
-  font-size: 15px;
-  margin-bottom: 8px;
+  font-size: 14px;
+  margin-bottom: 12px;
   padding: 0 16px;
 }
 
@@ -162,12 +165,12 @@ button:focus {
 }
 
 .full-button i {
-  margin-right: 8px;
+  margin-right: 10px;
   font-size: 16px;
 }
 
 .reset-button {
-  background-color: var(--secondary);
+  background-color: var(--text-secondary);
   color: white;
   height: 44px;
   padding: 0 16px;
@@ -175,37 +178,29 @@ button:focus {
 }
 
 .reset-button:hover {
-  background-color: var(--accent);
+  background-color: var(--text);
 }
 
 .reset-button i {
-  margin-right: 8px;
+  margin-right: 10px;
 }
 
 .select-container {
-  margin-top: 8px;
-}
-
-label {
-  display: block;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--primary);
-  margin-bottom: 6px;
+  margin-top: 12px;
 }
 
 select {
   width: 100%;
   height: 44px;
   padding: 0 12px;
-  font-family: 'Nunito', Arial, sans-serif;
-  font-size: 15px;
-  background-color: white;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  background-color: var(--surface);
   color: var(--text);
-  border: 2px solid var(--primary-light);
-  border-radius: 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius);
   appearance: none;
-  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%236a4c93%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23757575%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-position: right 12px top 50%;
   background-size: 12px auto;
@@ -215,81 +210,54 @@ select {
 select:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(106, 76, 147, 0.25);
+  box-shadow: 0 0 0 2px rgba(87, 0, 194, 0.2);
 }
 
 select:hover {
-  border-color: var(--primary);
+  border-color: var(--primary-light);
 }
 
 .help-section {
   margin-top: 16px;
-  padding: 12px;
-  background-color: var(--card-bg);
+  padding: 16px;
+  background-color: var(--surface);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
   display: flex;
   align-items: center;
-  border-left: 4px solid var(--accent);
+  border-left: 3px solid var(--primary);
 }
 
 .help-section i {
-  color: var(--accent);
+  color: var(--primary);
   font-size: 20px;
   margin-right: 12px;
 }
 
 .help-section p {
   color: var(--text);
-  font-size: 14px;
-  line-height: 1.4;
+  font-size: 13px;
+  line-height: 1.5;
 }
 
-/* Accessibility improvements */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    transition: none !important;
-  }
-}
-
-/* For users who prefer dark mode */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #212529;
-    --text: #f8f9fa;
-    --light-text: #adb5bd;
-    --card-bg: #343a40;
-    --primary-light: #9d84c4;
-  }
-  
-  select {
-    background-color: #2b3035;
-    color: var(--text);
-  }
-}
-
-
-
-
-
-/* Add this to your popup.css file */
+/* Security section styles */
 .security-bar-container {
   margin-top: 8px;
   margin-bottom: 12px;
 }
 
 .security-bar {
-  height: 12px;
-  background-color: #e9ecef;
-  border-radius: 6px;
+  height: 8px;
+  background-color: var(--border);
+  border-radius: 4px;
   overflow: hidden;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .security-level {
   height: 100%;
   width: 0;
-  border-radius: 6px;
+  border-radius: 4px;
   transition: var(--transition);
 }
 
@@ -298,7 +266,7 @@ select:hover {
   justify-content: space-between;
   align-items: center;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .security-status i {
@@ -306,54 +274,54 @@ select:hover {
 }
 
 .security-details {
-  margin-top: 10px;
+  margin-top: 12px;
   font-size: 13px;
-  line-height: 1.4;
-  color: var(--light-text);
+  line-height: 1.5;
+  color: var(--text-secondary);
 }
 
 .security-item {
   display: flex;
   align-items: center;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .security-item i {
-  margin-right: 8px;
+  margin-right: 10px;
   width: 16px;
   text-align: center;
 }
 
 .security-safe {
-  color: #2ecc71;
+  color: var(--success);
 }
 
 .security-warning {
-  color: #f39c12;
+  color: var(--warning);
 }
 
 .security-danger {
-  color: #e74c3c;
+  color: var(--error);
 }
 
 /* Security level colors */
 .level-safe {
-  background-color: #2ecc71;
+  background-color: var(--success);
   width: 100%;
 }
 
 .level-suspicious {
-  background-color: #f39c12;
+  background-color: var(--warning);
   width: 65%;
 }
 
 .level-dangerous {
-  background-color: #e74c3c;
+  background-color: var(--error);
   width: 30%;
 }
 
 .level-checking {
-  background-color: #6c757d;
+  background-color: var(--text-secondary);
   width: 20%;
   animation: pulse 2s infinite;
 }
@@ -362,4 +330,35 @@ select:hover {
   0% { opacity: 0.6; }
   50% { opacity: 1; }
   100% { opacity: 0.6; }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #9a67fb;       /* Adjusted dark mode purple */
+    --primary-light: #b088ff; /* Adjusted dark mode light purple */
+    --primary-dark: #7a47db;  /* Adjusted dark mode dark purple */
+    --background: #121212;
+    --surface: #1e1e1e;
+    --text: #ffffff;
+    --text-secondary: #b0b0b0;
+    --border: #333333;
+    --disabled: #666666;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  select {
+    background-color: var(--surface);
+    color: var(--text);
+    border-color: var(--border);
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23b0b0b0%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  }
 }
