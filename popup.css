@@ -179,6 +179,7 @@ button:focus-visible {
 
 .reset-button:hover {
   background-color: var(--text);
+  color: #6e20df;
 }
 
 .reset-button i {
