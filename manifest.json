@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "Senior Web Navigator",
+    "name": "Browser Buddy",
     "version": "1.0",
     "description": "A Chrome extension to help elderly users navigate websites more easily",
     "permissions": [
